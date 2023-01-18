@@ -446,7 +446,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
 
   // Assigning the text controller, if empty assigning a new one.
   void _assignController() {
-      _textEditingController =  widget.controller ?? TextEditingController();
+    _textEditingController = widget.controller ?? TextEditingController();
 
     _textEditingController?.addListener(() {
       if (widget.useHapticFeedback) {
@@ -804,15 +804,16 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
           alignment: Alignment.bottomCenter,
           children: <Widget>[
             AbsorbPointer(
-              // this is a hidden textfield under the pin code fields.
-              absorbing: true, // it prevents on tap on the text field
-              child: widget.useExternalAutoFillGroup
-                  ? textField
-                  : AutofillGroup(
-                      onDisposeAction: widget.onAutoFillDisposeAction,
-                      child: textField,
-                    ),
-            ),
+                // this is a hidden textfield under the pin code fields.
+                absorbing: true, // it prevents on tap on the text field
+                child: textField
+                // child: widget.useExternalAutoFillGroup
+                //     ? textField
+                //     : AutofillGroup(
+                //         onDisposeAction: widget.onAutoFillDisposeAction,
+                //         child: textField,
+                //       ),
+                ),
             Positioned(
               top: 0,
               left: 0,
